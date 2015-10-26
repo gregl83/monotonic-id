@@ -53,7 +53,9 @@ var mid = new MID({
 });
 ```
 
-The above first creates a instance of the monotonic-id class then casts the instance to a hex string and an id string. Following is additional functionality of monotonic-id.
+The above first creates a instance of the monotonic-id class then casts the instance to an id string and hex string.
+
+Following is additional functionality of monotonic-id.
 
 That's it!
 
@@ -61,14 +63,14 @@ That's it!
 
 The following are the supported options for creating a new monotonic-id instance.
 
-- `options` - (Object | null) node-uuid.v1 options for when mid is NOT supplied
-  - `options.node` - (Array) Node id as Array of 6 bytes (per 4.1.6). Default: Randomly generated ID.  See note 1.
-  - `options.clockseq` - (Number between 0 - 0x3fff) RFC clock sequence.  Default: An internally maintained clockseq is used.
-  - `options.msecs` - (Number | Date) Time in milliseconds since unix Epoch.  Default: The current time is used.
-  - `options.nsecs` - (Number between 0-9999) additional time, in 100-nanosecond units. Ignored if `msecs` is unspecified. Default: internal uuid counter is used, as per 4.2.1.2.
-- `mid` - (String | Buffer) string id or buffer to cast as a monotonic-id
+- `options` - (Object | null) node-uuid.v1 options for when mid is NOT supplied.
+  - `node` - (Array) Node id as Array of 6 bytes (per 4.1.6). Default: Randomly generated ID.
+  - `clockseq` - (Number between 0 - 0x3fff) RFC clock sequence.  Default: An internally maintained clockseq is used.
+  - `msecs` - (Number | Date) Time in milliseconds since unix Epoch.  Default: The current time is used.
+  - `nsecs` - (Number between 0-9999) additional time, in 100-nanosecond units. Ignored if `msecs` is unspecified. Default: internal uuid counter is used, as per 4.2.1.2.
+- `mid` - (String | Buffer) string id or buffer to cast as a monotonic-id.
 
-For more information on options checkout the [node-uuid readme](https://github.com/broofa/node-uuid).
+For more information on options checkout the [node-uuid v1 docs](https://github.com/broofa/node-uuid).
 
 ## License
 
