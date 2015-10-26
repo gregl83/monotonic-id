@@ -37,6 +37,7 @@ var mid = new MID();
 // cast mid instance in various formats
 var midID = mid.toID();
 var midHex = mid.toString('hex');
+var midBuffer = mid.toBuffer();
 
 // additional functionality
 
@@ -44,7 +45,7 @@ var midHex = mid.toString('hex');
 var midFromID = new MID(null, midID);
 
 // create MID class instance from buffer
-var midFromBuffer = new MID(null, mid._buffer);
+var midFromBuffer = new MID(null, midBuffer);
 
 // create MID class with node-uuid.v1 options
 var mid = new MID({

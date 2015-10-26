@@ -17,6 +17,7 @@ describe('monotonic-id class', function() {
       (mid).should.be.instanceOf(MID);
 
       (Buffer.isBuffer(mid._buffer)).should.be.true;
+      (mid._buffer).should.be.eql(mid.toBuffer());
 
       (mid.toString('hex')).should.match(hexRegex);
       (mid._hex).should.match(hexRegex);
@@ -34,6 +35,7 @@ describe('monotonic-id class', function() {
     (mid).should.be.instanceOf(MID);
 
     (Buffer.isBuffer(mid._buffer)).should.be.true;
+    (mid._buffer).should.be.eql(mid.toBuffer());
 
     (mid.toString('hex')).should.be.eql(hex);
     (mid.toString('hex')).should.match(hexRegex);
@@ -52,6 +54,7 @@ describe('monotonic-id class', function() {
     (mid).should.be.instanceOf(MID);
 
     (Buffer.isBuffer(mid._buffer)).should.be.true;
+    (mid._buffer).should.be.eql(mid.toBuffer());
 
     (mid.toString('hex')).should.be.eql(hex);
     (mid.toString('hex')).should.match(hexRegex);

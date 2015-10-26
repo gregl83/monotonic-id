@@ -71,4 +71,14 @@ MonotonicID.prototype.toString = function(encoding) {
 };
 
 
+/**
+ * Cast as buffer
+ *
+ * @returns {string}
+ */
+MonotonicID.prototype.toBuffer = function() {
+  return this._buffer;
+};
+
+
 module.exports = MonotonicID;
