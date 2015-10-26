@@ -67,7 +67,7 @@ MonotonicID.prototype.toID = function() {
  */
 MonotonicID.prototype.toString = function(encoding) {
   if ('hex' === encoding) return MonotonicID.toHex.call(this);
-  return Object.toString.call(this._buffer, encoding);
+  return Buffer.prototype.toString.call(this._buffer, encoding);
 };
 
 
