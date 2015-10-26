@@ -38,7 +38,7 @@ function MonotonicID(options, mid) {
  * @returns {string} hex
  */
 MonotonicID.toHex = function() {
-  if (!this._hex) this._hex = Object.toString.call(this._buffer, 'hex');
+  if (!this._hex) this._hex = Buffer.prototype.toString.call(this._buffer, 'hex');
   return this._hex;
 };
 
