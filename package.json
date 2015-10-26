@@ -1,0 +1,44 @@
+{
+  "name": "monotonic-id",
+  "version": "0.1.0",
+  "description": "JavaScript Unique Monotonic ID Class",
+  "author": "Gregory Langlais",
+  "private": false,
+  "keywords": [
+    "monotonic-id",
+    "uuid",
+    "id",
+    "identifier",
+    "unique",
+    "monotonic",
+    "sequential",
+    "sequence"
+  ],
+  "main": "src/MonotonicID",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregl83/monotonic-id.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gregl83/monotonic-id/issues"
+  },
+  "homepage": "https://github.com/gregl83/monotonic-id",
+  "scripts": {
+    "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/"
+  },
+  "devDependencies": {
+    "mocha": "2.2.x",
+    "should": "5.2.x",
+    "sinon": "1.14.x",
+    "coveralls": "2.11.x",
+    "istanbul": "0.3.x",
+    "browserify": "11.0.x",
+    "uglifyify": "3.0.x"
+  },
+  "dependencies": {
+    "node-uuid": "1.4.x"
+  },
+  "license": "MIT"
+}
