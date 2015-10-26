@@ -38,6 +38,8 @@ var mid = new MID();
 var midID = mid.toID();
 var midHex = mid.toString('hex');
 
+// additional functionality
+
 // create MID class instance from ID
 var midFromID = new MID(null, midID);
 
@@ -55,7 +57,7 @@ var mid = new MID({
 
 The above first creates a instance of the monotonic-id class then casts the instance to an id string and hex string.
 
-Following is additional functionality of monotonic-id.
+After there are some examples of additional monotonic-id functionality.
 
 That's it!
 
