@@ -1,6 +1,6 @@
 {
   "name": "monotonic-id",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript Unique Monotonic ID Class",
   "author": "Gregory Langlais",
   "private": false,
