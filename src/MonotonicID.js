@@ -15,7 +15,7 @@ function MonotonicID(options, mid) {
   this._id = null;
 
   if (mid) {
-    if ('string' === typeof mid && idRegex.test(mid)) {
+    if (MonotonicID.isID(mid)) {
       this._id = mid;
       this._hex = mid.replace(/-+/g, '');
       mid = new Buffer(this._hex, 'hex');
@@ -30,6 +30,17 @@ function MonotonicID(options, mid) {
   this._hex = uuid1.substr(14, 4) + uuid1.substr(9, 4) + uuid1.substr(0, 8) + uuid1.substr(19, 4) + uuid1.substr(24);
   this._buffer = new Buffer(this._hex, 'hex');
 }
+
+
+/**
+ * Test for valid ID (MID String)
+ *
+ * @param {string} id
+ * @returns {boolean} isID
+ */
+MonotonicID.isID = function(id) {
+  return 'string' === typeof id && idRegex.test(id);
+};
 
 
 /**

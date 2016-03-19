@@ -29,6 +29,16 @@ describe('monotonic-id class', function() {
     done();
   });
 
+  it('tests if id is valid', function(done) {
+    var mid = new MID();
+
+    (MID.isID(id)).should.be.true;
+    (MID.isID(hex)).should.be.false;
+    (MID.isID(mid)).should.be.false;
+
+    done();
+  });
+
   it('constructs mid from id', function(done) {
     var mid = new MID(null, id);
 

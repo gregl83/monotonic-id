@@ -43,6 +43,10 @@ var midBuffer = mid.toBuffer();
 
 // additional functionality
 
+// test for valid ID
+MID.isID(midID); // returns true
+MID.isID(midHex); // returns false
+
 // create MID class instance from ID
 var midFromID = new MID(null, midID);
 
