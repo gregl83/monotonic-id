@@ -38,7 +38,7 @@
     "uglifyify": "3.0.x"
   },
   "dependencies": {
-    "node-uuid": "1.4.x"
+    "uuid": "^3.0.0"
   },
   "license": "MIT"
 }
