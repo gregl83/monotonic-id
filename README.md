@@ -38,6 +38,7 @@ var mid = new MID()
 
 // cast mid instance in various formats
 var midID = mid.toID()
+var midUUID = mid.toUUID()
 var midHex = mid.toString('hex')
 var midBuffer = mid.toBuffer()
 
