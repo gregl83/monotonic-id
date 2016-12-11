@@ -13,6 +13,7 @@ function MonotonicID(options, mid) {
   this._buffer = null
   this._hex = null
   this._id = null
+  this._uuid = null
 
   if (mid) {
     if (MonotonicID.isID(mid)) {
@@ -26,8 +27,8 @@ function MonotonicID(options, mid) {
     }
   }
 
-  var uuid1 = uuid.v1(options)
-  this._hex = uuid1.substr(14, 4) + uuid1.substr(9, 4) + uuid1.substr(0, 8) + uuid1.substr(19, 4) + uuid1.substr(24)
+  this._uuid = uuid.v1(options)
+  this._hex = this._uuid.substr(14, 4) + this._uuid.substr(9, 4) + this._uuid.substr(0, 8) + this._uuid.substr(19, 4) + this._uuid.substr(24)
   this._buffer = new Buffer(this._hex, 'hex')
 }
 
@@ -67,6 +68,22 @@ MonotonicID.prototype.toID = function() {
   this._id = this._hex.slice(0,4) + '-' + this._hex.slice(4,8) + '-' + this._hex.slice(8,16) + '-' + this._hex.slice(16,20) + '-' + this._hex.slice(20)
 
   return this._id
+}
+
+
+/**
+ * Cast as UUID v1 string
+ *
+ * @returns {string} id
+ */
+MonotonicID.prototype.toUUID = function() {
+    if (this._uuid) return this._uuid
+
+    MonotonicID.toHex.call(this)
+
+    this._uuid = this._hex.slice(8,16) + '-' + this._hex.slice(4,8) + '-' + this._hex.slice(0,4) + '-' + this._hex.slice(16,20) + '-' + this._hex.slice(20)
+
+    return this._uuid
 }
 
 
