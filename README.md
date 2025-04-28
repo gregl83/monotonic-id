@@ -75,14 +75,22 @@ That's it!
 
 The following are the supported options for creating a new monotonic-id instance.
 
-- `options` - - (Object | null) Optional uuid state to apply (ignored if `mid` arg supplied). Properties may include:
-  - `node` - (Array) Node id as Array of 6 bytes (per 4.1.6). Default: Randomly generated ID.
-  - `clockseq` - (Number between 0 - 0x3fff) RFC clock sequence.  Default: An internally maintained clockseq is used.
-  - `msecs` - (Number | Date) Time in milliseconds since unix Epoch.  Default: The current time is used.
-  - `nsecs` - (Number between 0-9999) additional time, in 100-nanosecond units. Ignored if `msecs` is unspecified. Default: internal uuid counter is used, as per 4.2.1.2.
-- `mid` - (String | Buffer) string id or buffer to cast as a monotonic-id.
+|                                  |                                                                                                                                        |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| [`options`]                      | `Object` with one or more of the following properties:                                                                                 |
+| [`options.node = (random)` ]     | RFC "node" field as an `Array[6]` of byte values (per 4.1.6)                                                                           |
+| [`options.clockseq = (random)`]  | RFC "clock sequence" as a `Number` between 0 - 0x3fff                                                                                  |
+| [`options.msecs = (current time)`] | RFC "timestamp" field (`Number` of milliseconds, unix epoch)                                                                           |
+| [`options.nsecs = 0`]            | RFC "timestamp" field (`Number` of nanoseconds to add to `msecs`, should be 0-10,000)                                                  |
+| [`options.random = (random)`]    | `Array` of 16 random bytes (0-255) used to generate other fields, above                                                                |
+| [`options.rng`]                  | Alternative to `options.random`, a `Function` that returns an `Array` of 16 random bytes (0-255)                                       |
+| [`buffer`]                       | `Uint8Array` or `Uint8Array` subtype (e.g. Node.js `Buffer`). If provided, binary UUID is written into the array, starting at `offset` |
+| [`offset` = 0]                   | `Number` Index to start writing UUID bytes in `buffer`                                                                                 |
+| _returns_                        | UUID `String` if no `buffer` is specified, otherwise returns `buffer`                                                                  |
+| _throws_                         | `Error` if more than 10M UUIDs/sec are requested                                                                                       |
+| [`mid`]                          | `String` or `Buffer` to cast as a monotonic-id.                                                                                         |
 
-For more information on options checkout the [uuid v1 docs](https://github.com/broofa/node-uuid).
+For more information on options checkout the [uuid v1 docs](https://github.com/uuidjs/uuid/blob/v11.1.0/README_js.md#uuidv1options-buffer-offset).
 
 ## License
 
