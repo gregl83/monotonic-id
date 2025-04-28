@@ -69,8 +69,6 @@ The above first creates a instance of the monotonic-id class then casts the inst
 
 After there are some examples of additional monotonic-id functionality.
 
-That's it!
-
 ## Options
 
 The following are the supported options for creating a new monotonic-id instance.
