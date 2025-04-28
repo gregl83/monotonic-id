@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/gregl83/monotonic-id.svg?branch=master)](https://travis-ci.org/gregl83/monotonic-id)
-[![Coverage Status](https://coveralls.io/repos/gregl83/monotonic-id/badge.svg)](https://coveralls.io/r/gregl83/monotonic-id?branch=master)
+[![Build](https://github.com/gregl83/monotonic-id/actions/workflows/build.yml/badge.svg)](https://github.com/gregl83/monotonic-id/actions/workflows/build.yml)
+[![Coverage Status](https://codecov.io/gh/gregl83/monotonic-id/graph/badge.svg?token=UK5E8AINOT)](https://codecov.io/gh/gregl83/monotonic-id)
+[![NPMjs.com](https://img.shields.io/npm/v/monotonic-id.svg)](https://www.npmjs.com/package/monotonic-id)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/gregl83/expect-cookies/blob/master/LICENSE)
 # monotonic-id
 
 JavaScript Unique Monotonic ID Class
@@ -84,4 +86,4 @@ For more information on options checkout the [uuid v1 docs](https://github.com/b
 
 ## License
 
-MIT
+[MIT](LICENSE)
