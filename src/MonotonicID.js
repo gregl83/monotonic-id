@@ -5,8 +5,8 @@ var idRegex = /1[0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{8}-[89ab][0-9a-f]{3}-[0-9a-f]{1
 /**
  * Unique Monotonic ID Class
  *
- * @param {object|null} options passed to node-uuid.v1()s
- * @param {string|Buffer} mid ID or Buffer (valid ID converted to buffer)
+ * @param {object|null} [options] passed to node-uuid.v1()s
+ * @param {string|Buffer} [mid] ID or Buffer (valid ID converted to buffer)
  * @constructor
  */
 function MonotonicID(options, mid) {
