@@ -1,3 +1,4 @@
+![Deprecated](https://img.shields.io/badge/deprecated-red)
 [![Build](https://github.com/gregl83/monotonic-id/actions/workflows/build.yml/badge.svg)](https://github.com/gregl83/monotonic-id/actions/workflows/build.yml)
 [![Coverage Status](https://codecov.io/gh/gregl83/monotonic-id/graph/badge.svg?token=UK5E8AINOT)](https://codecov.io/gh/gregl83/monotonic-id)
 [![NPMjs.com](https://img.shields.io/npm/v/monotonic-id.svg)](https://www.npmjs.com/package/monotonic-id)
@@ -13,6 +14,11 @@ The UUID sequence is stripped of the `-` separator and is organized such that ID
 The resulting ID can be indexed as a binary value providing a reliable format for large databases with negligible performance loss and smaller footprint than auto incremented IDs (MySQL/MariaDB binary(16) vs bigint).
 
 For more information see the following [Percona UUID Blog Post](https://www.percona.com/blog/2014/12/19/store-uuid-optimized-way/) which was referenced to create this package.
+
+> [!WARNING]
+> The core concept behind this package—creating monotonically sortable, time-based IDs—has been officially standardized in **[RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562)**. 
+> 
+> We highly recommend transitioning to native implementations of **UUIDv7** (or UUIDv6) moving forward. This repository is no longer maintained and remains available for historical purposes.
 
 ## Requirements
 
